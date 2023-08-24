@@ -10,6 +10,11 @@
       "StackName": "amplify-awsamplifykinetico-dev-150906",
       "StackId": "arn:aws:cloudformation:eu-west-1:554228937779:stack/amplify-awsamplifykinetico-dev-150906/ca325b20-4287-11ee-aedf-06d562b67f7f",
       "AmplifyAppId": "d390qxzqgcptw6"
+    },
+    "categories": {
+      "auth": {
+        "awsamplifykineticob2fd8e69": {}
+      }
     }
   }
 }
