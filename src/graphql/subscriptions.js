@@ -37,3 +37,39 @@ export const onDeleteTodo = /* GraphQL */ `
     }
   }
 `;
+export const onCreateProduct = /* GraphQL */ `
+  subscription OnCreateProduct($filter: ModelSubscriptionProductFilterInput) {
+    onCreateProduct(filter: $filter) {
+      id
+      dynamicSlug
+      productName
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onUpdateProduct = /* GraphQL */ `
+  subscription OnUpdateProduct($filter: ModelSubscriptionProductFilterInput) {
+    onUpdateProduct(filter: $filter) {
+      id
+      dynamicSlug
+      productName
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onDeleteProduct = /* GraphQL */ `
+  subscription OnDeleteProduct($filter: ModelSubscriptionProductFilterInput) {
+    onDeleteProduct(filter: $filter) {
+      id
+      dynamicSlug
+      productName
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
