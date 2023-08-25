@@ -14,6 +14,9 @@
     "categories": {
       "auth": {
         "awsamplifykineticob2fd8e69": {}
+      },
+      "api": {
+        "awsamplifykinetico": {}
       }
     }
   }
