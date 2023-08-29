@@ -1,8 +1,39 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { API, graphqlOperation } from 'aws-amplify';
 import PersonCard from './PersonCard'
-import peopleData from './data/people.json'
+
+const listPeople = `
+  query ListPeople {
+    listPeople {
+      items {
+        id
+        dynamicSlug
+        fullName
+        title
+        description
+      }
+    }
+  }
+`
 
 const People = () => {
+
+  const [peopleData, setPeopleData] = useState([]);
+  
+  const loadPeopleData = async () => {
+    try {
+      const peopleData = await API.graphql(graphqlOperation(listPeople));
+      setPeopleData(peopleData.data?.listPeople.items);
+    }
+    catch (err) {
+      console.log(err);
+    }
+  }
+
+  useEffect(() => {
+    loadPeopleData();
+  }, []);
+
   return (
     <section id="people" className="section">
       <header className="imageheader"></header>
@@ -10,7 +41,7 @@ const People = () => {
         <h2 className="headline">People</h2>
         <div className="people-cards">
           {
-            peopleData.map((person) => 
+            peopleData?.map((person) => 
               <PersonCard dynamicSlug={`${person.dynamicSlug}`}
                           fullName={`${person.fullName}`}
                           title={`${person.title}`}
