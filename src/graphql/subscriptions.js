@@ -73,3 +73,45 @@ export const onDeleteProduct = /* GraphQL */ `
     }
   }
 `;
+export const onCreatePerson = /* GraphQL */ `
+  subscription OnCreatePerson($filter: ModelSubscriptionPersonFilterInput) {
+    onCreatePerson(filter: $filter) {
+      id
+      dynamicSlug
+      fullName
+      title
+      description
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onUpdatePerson = /* GraphQL */ `
+  subscription OnUpdatePerson($filter: ModelSubscriptionPersonFilterInput) {
+    onUpdatePerson(filter: $filter) {
+      id
+      dynamicSlug
+      fullName
+      title
+      description
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onDeletePerson = /* GraphQL */ `
+  subscription OnDeletePerson($filter: ModelSubscriptionPersonFilterInput) {
+    onDeletePerson(filter: $filter) {
+      id
+      dynamicSlug
+      fullName
+      title
+      description
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;

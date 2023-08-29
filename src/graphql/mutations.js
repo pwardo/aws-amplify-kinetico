@@ -91,3 +91,54 @@ export const deleteProduct = /* GraphQL */ `
     }
   }
 `;
+export const createPerson = /* GraphQL */ `
+  mutation CreatePerson(
+    $input: CreatePersonInput!
+    $condition: ModelPersonConditionInput
+  ) {
+    createPerson(input: $input, condition: $condition) {
+      id
+      dynamicSlug
+      fullName
+      title
+      description
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const updatePerson = /* GraphQL */ `
+  mutation UpdatePerson(
+    $input: UpdatePersonInput!
+    $condition: ModelPersonConditionInput
+  ) {
+    updatePerson(input: $input, condition: $condition) {
+      id
+      dynamicSlug
+      fullName
+      title
+      description
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const deletePerson = /* GraphQL */ `
+  mutation DeletePerson(
+    $input: DeletePersonInput!
+    $condition: ModelPersonConditionInput
+  ) {
+    deletePerson(input: $input, condition: $condition) {
+      id
+      dynamicSlug
+      fullName
+      title
+      description
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
